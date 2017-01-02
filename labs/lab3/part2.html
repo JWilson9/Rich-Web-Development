@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+ function getCelsius() {
+        var fTempVal = parseFloat(document.getElementById('fTemp').value);
+         if (isNaN(fTempVal)) 
+        {
+            alert("Must input numbers");
+            return false;
+        }
+        else{
+            var cTempVal = (fTempVal - 32) * (5 / 9);
+            document.getElementById('cTemp').value = cTempVal;
+            return false;
+        }
+    }
+
+    function getFahrenheit() {
+        var cTempVal = parseFloat(document.getElementById('cTemp').value);
+        if (isNaN(cTempVal)) 
+        {
+            alert("Must input numbers");
+            return false;
+        }else{
+            var fTempVal = (cTempVal * (9 / 5)) + 32;
+            console.log(fTempVal);
+            document.getElementById('fTemp').value = fTempVal;
+            return false;
+        }
+    }
+
+
+
+</script>
+
+
+<form name="conversionForm">
+    <table border="1">
+        <tbody>
+            <tr>
+                <td>Fahrenheit</td>
+                <td>
+                    <input name="fTemp" id="fTemp" type="text" />
+                </td>
+                <td>
+                    <button type="button" onclick="getCelsius();return false"> Fahrenheit to Celsius</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Celsius</td>
+                <td>
+                    <input name="cTemp" id="cTemp" type="text" />
+                </td>
+                <td>
+                    <button type="button" onclick="getFahrenheit();return false">Celsius to Fahrenheit</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+</body>
+</html>
